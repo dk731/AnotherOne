@@ -153,7 +153,7 @@ void MainGL::loadScene(std::string folderPath)
     AOScene *newScene = new AOScene();
     
     
-    for (int i = 0; i < 2000; i++)
+    /*for (int i = 0; i < 2000; i++)
     {
         AOObject* tmpObj = new AOObject(glm::vec3((rand() % 60) / (float)10, (rand() % 60) / (float)10, (rand() % 60) / (float)10), "test_cube");
         tmpObj->InitMesh("def_cube.obj");
@@ -161,7 +161,14 @@ void MainGL::loadScene(std::string folderPath)
         newScene->objList.push_back(tmpObj);
 
         sceneList.push_back(newScene);
-    }
+    }*/
+
+    AOObject* tmpObj = new AOObject(glm::vec3(0.0f, 0.0f, 0.0f), "test_monkey");
+    tmpObj->InitMesh("def_monkey.obj");
+    tmpObj->scale = glm::vec3(3.0f);
+    newScene->objList.push_back(tmpObj);
+
+    sceneList.push_back(newScene);
 }
 
 void MainGL::unloadScene(int id)
